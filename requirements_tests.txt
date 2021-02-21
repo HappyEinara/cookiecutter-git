@@ -1,0 +1,11 @@
+pytest
+pytest-cov
+coverage
+flake8
+pylint
+mypy
+setuptools
+wheel
+
+gitpython
+semver

@@ -1,0 +1,15 @@
+# Compiled Python
+__pycache__/
+*.pyc
+
+# Build and distribution artefacts
+*.egg-info/
+dist/
+build/
+
+# Test artefacts
+.tox/
+.coverage
+
+# Cookiecutter template artefacts
+generated-cookiecutter-git/

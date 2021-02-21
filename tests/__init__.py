@@ -1,0 +1,1 @@
+"""cookiecutter_git tests."""
