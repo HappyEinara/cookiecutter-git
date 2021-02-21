@@ -13,7 +13,10 @@ import cookiecutter_git
 @click.option("-v", "--verbose", "verbosity", count=True)
 @click.pass_context
 def cli(context, verbosity):
-    """A wrapper around cookie-cutter to provide metadata from the template repo."""
+    """
+    A wrapper around cookie-cutter to provide metadata from the template
+    repo.
+    """
 
     context.ensure_object(dict)
     context.obj['verbosity'] = verbosity
