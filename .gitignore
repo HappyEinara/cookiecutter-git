@@ -10,6 +10,7 @@ build/
 # Test artefacts
 .tox/
 .coverage
+tests/data/output/
 
 # Cookiecutter template artefacts
 generated-cookiecutter-git/
