@@ -14,26 +14,18 @@ def test_empty_repo(case):
     """Test that creating the input repo succeeds."""
 
     assert case
-    input_repo = case.repo("input")
-    input_repo.git_init()
+    input_repo = case.repo("project")
     result = input_repo.git("show")
     assert result
 
+
 @pytest.mark.parametrize("case_name", ["test_generation"])
-def test_copied_repo(case):
+def test_copied_repo(case, dir_to_dict):
     """Test that creating input repo with initial files succeeds."""
 
     assert case
-    source = case.source / "input"
-    dest = case.repo("input")
-    dest.git_init(source)
-    result = dest.git("show")
+    repo = case.repo("project")
+    result = repo.git("show")
     assert result
 
-    source_files = [
-        f.relative_to(source) for f in source.rglob("*")
-        if not str(f).startswith(str(source / ".git"))]
-    dest_files = [
-        f.relative_to(dest.path) for f in dest.path.rglob("*")
-        if not str(f).startswith(str(dest.path / ".git"))]
-    assert source_files == dest_files
+    assert dir_to_dict(repo.source) == dir_to_dict(repo.path)
